@@ -1,0 +1,467 @@
+.company {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	* {
+		transition:all .4s;
+	}
+	&-inner {
+		max-width: 1200px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: start;
+		flex-wrap:wrap;
+		.company-box {
+			width: 48%;
+			border-radius: 4px;
+			border: 3px solid #eee;
+			margin-bottom: 20px;
+			position: relative;
+			height: 300px;
+			&:nth-of-type(4),
+			&:nth-of-type(5) {
+				margin-bottom: 0px;
+			}
+			&:after {
+				font-family: 'fontello';
+				content: '\e834';
+				position: absolute;
+				top:calc(50% - 10px);
+				left:calc(50% - 10px);
+				font-size: 20px;
+				-moz-animation: spin 2s infinite linear;
+				-o-animation: spin 2s infinite linear;
+				-webkit-animation: spin 2s infinite linear;
+				animation: spin 2s infinite linear;
+				display: inline-block;
+				z-index: 50;
+			}
+			&:before {
+				width: 100%;
+				height: 100%;
+				background:#eee;
+				content:"";
+				position: absolute;
+				top:0;
+				left:0;
+				z-index: 49;
+			}
+			&-loaded {
+				&:before,
+				&:after {
+					display: none;
+				}
+			}
+			h2 {
+				font-size: 20px;
+				margin: 0;
+				text-align: center;
+				padding: 10px 0;
+				color: #999;
+				background: #eee;
+			}
+			.total-companies{
+				width: 100%;
+				height: calc(100% - 44px);
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+				flex-wrap:wrap;
+				span {
+					display: block;
+					width: 150px;
+					height: 150px;
+					border:2px solid #eee;
+					border-radius: 100%;
+					font-size: 20px;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-around;
+					align-items: center;
+					flex-wrap:wrap;
+				}
+			}
+			.listOfCompanies {
+				height: calc(100% - 44px);
+				overflow: hidden;
+				position: relative;
+				> .listOfCompanies-holder {
+					width: 100%;
+					position: absolute;
+					top:0;
+					left:0;
+				}
+				span {
+					display: block;
+					padding:8px 20px;
+					box-sizing:border-box;
+					width: 100%;
+					transition:all .4s;
+					cursor: pointer;
+					&:nth-of-type(2n) {
+						background:#f9f9f9;
+					}
+					&:hover {
+						background:#999;
+						color:#fff;
+					}
+				}
+				span.active {
+					background:#3E7C3E;
+					color:#fff;
+				}
+			}
+			#piechart {
+				width: 100%;
+				height: calc(100% - 44px);
+				overflow: hidden !important;
+				svg {
+					width: 100% !important;
+				}
+			}
+			.hiddenCompany {
+				display: none;
+				width: 100%;
+				height: calc(100% - 44px);
+				position: relative;
+				overflow: hidden;
+				.hiddenCompany-inner {
+					position: absolute;
+					top:0;
+					left:0;
+					width: 100%;
+				}
+				span {
+					display: block;
+					padding: 8px 20px;
+					box-sizing: border-box;
+					width: 100%;
+					transition: all .4s;
+					cursor: pointer;
+					&:nth-of-type(2n) {
+						background: #f9f9f9;
+					}
+					&:hover {
+						background: #999;
+						color: #fff;
+					}
+				}
+				.back {
+					position: absolute;
+					top:0;
+					right:10px;
+					width: 40px;
+					height: 20px;
+					background:#000;
+					z-index: 10;
+					cursor: pointer;
+					background:#eee;
+					border:1px solid #999;
+					border-radius: 0 0 4px 4px;
+					border-top: 0;
+					text-align: center;
+					font-family: "LatoBold";
+					color:#999;
+				}
+			}
+			.hiddenCompany.active {
+				display: block;
+			}
+			.news-holder {
+				.news-item {
+					width: 100%;
+					overflow: hidden;
+					display: none;
+					img {
+						width: 100%;
+					}
+					h3 {
+						font-size: 22px;
+						text-align: center;
+						color:#999;
+						text-transform: uppercase;
+						font-family: "LatoBoldItalic";
+					}
+					p {
+						text-align: justify;
+						font-size: 15px;
+						padding:0 20px;
+					}
+					.footer-news {
+						padding:10px 20px;
+						border-top: 3px solid #eee;
+
+						display: flex;
+						flex-direction: row;
+						justify-content: space-around;
+						align-items: center;
+						flex-wrap:wrap;
+						span {
+							
+							font-family: "LatoBold";
+							color:#999;
+						}
+						strong {
+							font-family: "LatoBold";
+							color:#999;
+						}
+					}
+				}
+				.news-item.active {
+					display: block;
+				}
+				.nav-gallery {
+					display: flex;
+						flex-direction: row;
+						justify-content: center;
+						align-items: center;
+						padding:10px 0;
+					span {
+						float: left;
+						width: 20px;
+						height: 20px;
+						background:#eee;
+						margin-right: 10px;
+						border-radius: 100%;
+						cursor: pointer;
+						transition:all .4s;
+						&:last-of-type {
+							margin-right: 0;
+						}
+						&:hover {
+							background:#999;
+						}
+					}
+					span.active {
+						background:#999;
+					}
+				}
+			}
+		}
+		.newsBox {
+			height: auto;
+			min-height: 300px;
+		}
+		.company-partners {
+			overflow: hidden;
+			width: 100%;
+			position: relative;
+			transition:all .4s;
+			height: 0;
+			.company-partners-inner {
+				position: absolute;
+				top:0;
+				left:0;
+				width: auto;
+				white-space:nowrap;
+				> div:not(.scrollX) {
+					width: 150px;
+					height: 200px;
+					float: left;
+					box-sizing:border-box;
+					background:#eee;
+					box-shadow: 0 0 0 1px #fff inset;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					align-items: center;
+					strong {
+						font-family: "LatoBold";
+						font-size: 17px;
+						font-weight: normal;
+						color:#555;
+						position: relative;
+						&:after {
+							position: absolute;
+							top:100%;
+							left:0;
+							content:"";
+							width: 100%;
+							height: 2px;
+							background:#fff;
+						}
+					}
+					span {
+						font-family: "LatoBoldItalic";
+						font-size: 92px;
+						color:#fff;
+					}
+				}
+				.scroll-down {
+					width: 5px;
+					position: absolute;
+					top:0;
+					right: 0;
+					z-index: 10;
+					background:#999;
+				}
+			}
+			.scrollX {
+				position: absolute;
+				bottom:0;
+				left:0;
+				height: 5px;
+				background:#999;
+				width: 0;
+			}
+			.scrollX.active {
+				width: auto;
+			}
+			.sort-holder {
+				position: absolute;
+				top:0;
+				right: 0;
+				.sortName,
+				.sortVal {
+					background:#eee;
+					border:1px solid #999;
+					border-radius: 4px;
+					padding:3px 20px 3px 20px;
+					font-family: "LatoBoldItalic";
+					color:#999;
+					&:before {
+						content:"";
+						margin-right: 10px;
+						z-index: 2;
+						color:#999;
+						content: '\e809';
+						font-family: "fontello";
+						color:#fff;
+						display: block;
+						float: left;
+					}
+				}
+				.sortVal {
+					right: 100px;
+				}
+				.down {
+					&:before {
+						position: relative;
+						top:2px;
+						transform:rotate(180deg);
+					}
+				}
+				.active {
+					background:#999;
+					color:#fff;
+				}
+			}
+		}
+		.company-partners.active {
+			height: 200px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.scrollY {
+	width: 5px;
+	position: absolute;
+	top:0;
+	right: 0;
+	z-index: 10;
+	background:#999;
+}
+
+.scrollY.active {
+	height: 10px;
+}
+
+@keyframes scrollShadow{
+	0%{
+		height: 0px;
+		opacity: 0;
+	}
+	50%{
+		height: 16px;
+		top:-8px;
+		opacity: .4;
+	}
+	100%{
+		height: 0px;
+		opacity: 0;
+	}
+}
+
+@keyframes scrollShadow2{
+	0%{
+		height: 0px;
+		opacity: 0;
+	}
+	50%{
+		height: 16px;
+		bottom:-8px;
+		opacity: .4;
+	}
+	100%{
+		height: 0px;
+		opacity: 0;
+	}
+}
+
+.top-line-anim {
+	position: absolute;
+	top:-3px;
+	left:0;
+	width: 100%;
+	background:#999;
+	border-radius: 100%;
+	display: none;
+	z-index: 10;
+}
+
+.bottom-line-anim {
+	position: absolute;
+	bottom:-3px;
+	left:0;
+	width: 100%;
+	background:#999;
+	border-radius: 100%;
+	display: none;
+	z-index: 10;
+}
+
+.top-line-anim.active {
+	display: block;
+	animation-name: scrollShadow;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
+}
+
+.bottom-line-anim.active {
+	display: block;
+	animation-name: scrollShadow2;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+	.company {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		&-inner {
+			max-width: 1200px;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: start;
+			flex-wrap:wrap;
+			.company-box {
+				width: 80%;
+				margin-bottom: 50px !important;
+			}
+			.company-partners {
+				width: 80%;
+			}
+		}
+	}
+}

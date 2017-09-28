@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registration</title>
+	<link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+	<noscript>Странница будет работать не корректно,у вас отключен JavaScript.</noscript>
+	<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<div class="regist">
+		<div class="regist-inner">
+			<h1>Sing up</h1>
+			<div class="forms">
+				<div class="input-holder">
+					<input type="text" class="name">
+					<label for="">Name</label>
+				</div>
+				<div class="input-holder ">
+					<input type="text" class="secondname">
+					<label for="">Secondname</label>
+				</div>
+				<div class="input-holder">
+					<input type="text" class="email">
+					<label for="">Email</label>
+				</div>
+				<div class="input-holder gender-holder">
+					<span class="icon-down-open-mini gender">Gender</span>
+					<ul>
+						<li>Male</li>
+						<li>Female</li>
+					</ul>
+					<div></div>
+				</div>
+				<div class="input-holder">
+					<input type="password" class="password">
+					<label for="">Password</label>
+				</div>
+				<div class="input-holder check-privacy">
+					<input type="checkbox" id="privacy">
+					<label for="privacy">I agree Privacy Notice</label>
+				</div>
+				<button class="send">Send</button>
+				<div class="errors"></div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/global.js"></script>
+</body>
+</html>
